@@ -50,7 +50,7 @@ class Tsc(Validator):
     checker = 'tsc'
     args = ''
     regex = r"""
-            (.*?)\(
+            (.*?{basename}.*?)\(
             (?P<lnum>\d+),
             (?P<col>\d+)\):
             \s

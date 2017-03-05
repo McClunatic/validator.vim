@@ -99,8 +99,9 @@ class Validator(Base):
     def parse_loclist(self, loclist, bufnr):
         logging.warn("parse input = {}".format([self, loclist, bufnr]))
 
-        if self.checker not in self._regex_map:
-            self._regex_map[self.checker] = re.compile(self.regex, re.VERBOSE)
+        if self.checker not in self._regex_map or '{basename}' in self.regex:
+            regex = self.regex.format(basename=os.path.basename(self.filename))
+            self._regex_map[self.checker] = re.compile(regex, re.VERBOSE)
 
         lists = []
         for i, l in enumerate(loclist):
