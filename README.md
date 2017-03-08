@@ -26,6 +26,7 @@ Builtin Checkers
 * cython, `cython`
 * css, `csslint`
 * javascript, `jshint`, `eslint`, `jscs`
+* typescript, `tsc`
 * ruby, `mri`, `rubocop`
 * json, `jsonlint`
 * lua, `luac`, `luacheck`
